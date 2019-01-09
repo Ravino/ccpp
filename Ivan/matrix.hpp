@@ -1,23 +1,10 @@
+#include <stdlib.h>
 #include <iostream>
 #include <vector>
 
 
 
 namespace matrixlib {
-
-int printVec (std::vector <int> &vec) {
-
-  std::cout << "Печать вектора" << std::endl;
-
-
-  for (int i = 0; i < vec. size (); i++) {
-    std::cout << vec [i] << std::endl;
-  }
-
-
-  return 0;
-
-}
 
 int swap (int *a, int *b) {
 
@@ -76,41 +63,6 @@ while (i <= j);
 
 
 
-std::vector <int> createVector () {
-
-  std::vector <int> vectorData;
-
-
-  std::cout << "Создайте последовательность хаотичного типа" << std::endl;
-  std::cout << "Для выхода из цикла введите ноль" << std::endl;
-
-  int readData;
-
-
-  for (;;) {
-
-    std::cin >> readData;
-
-
-    if (readData == 0) {
-      std::cout << "Вы завершили ввод" << std::endl;
-      break;
-    }
-
-
-    std::cout << "Вы ввели число: " << readData << std::endl;
-    vectorData. push_back (readData);
-  }
-
-
-  return vectorData;
-
-}
-
-
-
-
-
 std::vector <std::vector <int>> createMatrix () {
 
   int row;
@@ -154,7 +106,8 @@ std::vector <std::vector <int>> createMatrix () {
 
 
 
-int transpose (std::vector <std::vector <int>> matrix) {
+
+std::vector <std::vector <int>> transpose (std::vector <std::vector <int>> matrix) {
 
   std::vector <std::vector <int>> newMatrix;
 
@@ -180,10 +133,7 @@ int transpose (std::vector <std::vector <int>> matrix) {
   }
 
 
-  matrix = newMatrix;
-
-
-  return 0;
+  return newMatrix;
 
 }
 
@@ -295,12 +245,12 @@ int printMatrix (std::vector <std::vector <int>> &matrix) {
 
   for (int i = 0; i < matrix. size (); i++) {
 
-    std::cout << std::endl << "Строка: " << i << std::endl;
+    std::cout << std::endl << "Строка: " << i + 1 << std::endl;
 
 
     for (int j = 0; j < matrix [i]. size (); j++) {
 
-      std::cout << j << " ";
+      std::cout << matrix [i] [j] << " ";
 
     }
 

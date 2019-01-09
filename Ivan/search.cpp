@@ -10,13 +10,13 @@ int main () {
 std::vector <std::vector <int>> matrix = matrixlib::createMatrix ();
 
 
-int resTranspose = matrixlib::transpose (matrix);
+std::vector <std::vector <int>> resMatrixTransporse = matrixlib::transpose (matrix);
 
 
 std::cout << "Вывод исходной матрицы\n";
 
 
-int resBaseMatrix = matrixlib::printMatrix (matrix);
+int resBaseMatrix = matrixlib::printMatrix (resMatrixTransporse);
 
 
 int resSortRowMatrix = matrixlib::sortRowMatrix (matrix);
