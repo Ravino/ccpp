@@ -22,11 +22,15 @@ int resBaseMatrix = matrixlib::printMatrix (resMatrixTransporse);
 int resSortRowMatrix = matrixlib::sortRowMatrix (matrix);
 
 
+std::cout << "Выполняется бинарный поиск" << std::endl;
 int resBinarySearchMatrix = matrixlib::binarySearchMatrix (matrix);
 
 
+std::cout << "Выполняется однородный бинарный поиск" << std::endl;
+int resUniformBinarySearchMatrix = matrixlib::uniformBinarySearchMatrix (matrix);
 
 
-//int main () {
+
+
   return 0;
 }
