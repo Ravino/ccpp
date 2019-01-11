@@ -107,17 +107,17 @@ std::vector <std::vector <int>> createMatrix () {
 
 
 
-std::vector <std::vector <int>> transpose (std::vector <std::vector <int>> matrix) {
+std::vector <std::vector <int>> transpose (std::vector <std::vector <int>> &matrix) {
 
   std::vector <std::vector <int>> newMatrix;
 
 
-  newMatrix. resize (matrix. size ());
+  newMatrix. resize (matrix [0]. size ());
 
 
-  for (int i = 0; i < matrix. size (); i++) {
+  for (int i = 0; i < newMatrix. size (); i++) {
 
-    newMatrix [i]. resize (matrix [i]. size ());
+    newMatrix [i]. resize (matrix. size ());
 
   }
 
@@ -133,7 +133,7 @@ std::vector <std::vector <int>> transpose (std::vector <std::vector <int>> matri
   }
 
 
-  return newMatrix;
+  return newMatrix;;
 
 }
 
