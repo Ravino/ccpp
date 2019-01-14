@@ -68,6 +68,8 @@ std::vector <std::vector <int>> createMatrix () {
   int row;
   int column;
 
+  int elem;
+
 
   std::vector <std::vector <int>> matrix;
 
@@ -89,11 +91,26 @@ std::vector <std::vector <int>> createMatrix () {
   }
 
 
+  std::cout << "\n\nЗаполните матрицу\n";
+
   for (int i = 0; i < row; i++) {
+
+    std::cout << "\n\nСтрока: " << i + 1 << "\n";
+
 
     for (int j = 0; j < column; j++) {
 
-      matrix [i] [j] = rand () % 100 + 1;
+      std::cout << "\n\nСтолбец: " << j + 1 << "\n";
+
+
+      std::cin >> elem;
+
+
+      matrix [i] [j] = elem;
+
+
+      std::cout << "\n\nЗначение на пересечении строки " << i + 1 << " и столбца " << j + 1 << " равняется " << elem << "\n";
+
 
     }
 
