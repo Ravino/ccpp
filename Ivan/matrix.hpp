@@ -6,6 +6,32 @@
 
 namespace matrixlib {
 
+int verifyOrder (std::vector <int> &vec) {
+
+  int first = vec [0];
+
+
+  for (int i = 1; i < vec. size (); i++) {
+
+    if (first > vec [i]) {
+
+      return 0;
+
+    }
+
+
+    first = vec [i];
+
+  }
+
+
+  return 1;
+
+}
+
+
+
+
 int swap (int *a, int *b) {
 
   int temp = *a;
@@ -244,6 +270,16 @@ int binarySearchMatrix (std::vector <std::vector <int>> &matrix) {
 
   for (int i = 0; i < matrix. size (); i++) {
 
+    if (verifyOrder (matrix [i]) == 0) {
+
+      std::cout << "\n\nСтолбец с номером " << i + 1 << " не имеет сортировки\n\n";
+
+
+      continue;
+
+    }
+
+
     binarySearch (matrix [i], i + 1, searchElem);
 
   }
@@ -397,6 +433,16 @@ int uniformBinarySearchMatrix (std::vector <std::vector <int>> &matrix) {
 
 
   for (int i = 0; i < matrix. size (); i++) {
+
+    if (verifyOrder (matrix [i]) == 0) {
+
+      std::cout << "\n\nСтолбец с номером " << i + 1 << " не имеет сортировки\n\n";
+
+
+      continue;
+
+    }
+
 
     uniformBinarySearch (matrix [i], 0, matrix [i]. size () - 1, i + 1, searchElem);
 
