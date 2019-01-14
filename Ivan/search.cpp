@@ -21,8 +21,8 @@ int main () {
 
 
 
-  std::cout << "\n\nСортировка столбцов матрицы\n";
-  int resSortRowMatrix = matrixlib::sortRowMatrix (resMatrixTransporse);
+//  std::cout << "\n\nСортировка столбцов матрицы\n";
+//  int resSortRowMatrix = matrixlib::sortRowMatrix (resMatrixTransporse);
 
 
 std::cout << "\n\nВыполняется бинарный поиск" << std::endl;
