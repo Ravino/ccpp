@@ -20,6 +20,9 @@ int main () {
   std::vector <std::vector <int>> resMatrixTransporse = matrixlib::transpose (matrix);
 
 
+matrixlib::printMatrix (resMatrixTransporse);
+
+
 
 //  std::cout << "\n\nСортировка столбцов матрицы\n";
 //  int resSortRowMatrix = matrixlib::sortRowMatrix (resMatrixTransporse);
