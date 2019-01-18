@@ -8,8 +8,26 @@
 
 int main () {
 
-  std::cout << "Создание матрицы\n";
-  std::vector <std::vector <int>> matrix = matrixlib::createMatrix ();
+  std::vector <std::vector <int>> matrix;
+
+
+  int resMenu = matrixlib::menu ();
+
+
+  if (resMenu == 1) {
+
+    std::cout << "\n\nСчитывание матрицы из файла\n\n";
+    matrix = matrixlib::readMatrix ();
+
+  }
+
+
+  if (resMenu == 2) {
+
+    std::cout << "Создание матрицы\n";
+    matrix = matrixlib::createMatrix ();
+
+  }
 
 
   std::cout << "Вывод исходной матрицы\n";
