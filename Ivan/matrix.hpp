@@ -1,10 +1,81 @@
 #include <stdlib.h>
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <vector>
+#include <string>
 
 
 
 namespace matrixlib {
+
+
+int menu () {
+
+  std::cout << "\n\nАктивируйте нужный пункт меню\n\n";
+
+  std::cout << "\n 1. Считать матрицу из файла\n";
+
+  std::cout << "\n 2. Создать матрицу руками\n";
+
+
+  int item;
+
+
+  std::cin >> item;
+
+
+  return item;
+
+}
+
+
+
+
+std::vector <std::vector <int>> readMatrix () {
+
+  std::vector <std::vector <int>> matrix;
+
+  std::ifstream dataFile ("./dataMatrix.txt");
+
+
+  while (dataFile) {
+
+    std::stringstream ss;
+
+    std::vector <int> vec;
+
+    std::string str;
+    std::string tok;
+
+
+    std::getline (dataFile, str);
+
+
+    ss << str;
+
+
+    while (std::getline (ss, tok, ',')) {
+
+      vec. push_back (std::stoi (tok));
+
+    }
+
+
+    matrix. push_back (vec);
+
+  }
+
+
+  matrix. pop_back ();
+
+
+  return matrix;
+
+}
+
+
+
 
 int verifyOrder (std::vector <int> &vec) {
 
