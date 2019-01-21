@@ -10,6 +10,7 @@
 namespace matrixlib {
 
 
+
 int menu () {
 
   std::cout << "\n\nАктивируйте нужный пункт меню\n\n";
@@ -290,7 +291,7 @@ int binarySearch (std::vector <int> &vec, int numVec, int searchElem) {
 
   if (searchIndElem > -1) {
 
-    std::cout << "Элемент найден с позицией: " << numVec << std::endl;
+    std::cout << "Элемент найден с позицией: " << searchIndElem + 1 << std::endl;
 
 
   return 0;
@@ -298,7 +299,7 @@ int binarySearch (std::vector <int> &vec, int numVec, int searchElem) {
   }
 
 
-  std::cout << "Элемент не найден с позицией: " << numVec << "!\n" << std::endl;
+  std::cout << "Элемент не найден" << "!\n" << std::endl;
 
 
   return 0;
@@ -421,7 +422,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
 
   if (searchElem == vec [doublSize]) {
 
-    std::cout << "Искомый элемент найден. Позиция: " << numVec << std::endl;
+    std::cout << "Искомый элемент найден. Позиция: " << doublSize + 1 << std::endl;
 
 
     return 0;
@@ -431,7 +432,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
 
   if (searchElem == vec [start]) {
 
-    std::cout << "Искомый элемент найден. Позиция: " << numVec << std::endl;
+    std::cout << "Искомый элемент найден. Позиция: " << start << std::endl;
 
 
     return 0;
@@ -468,7 +469,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
 
     if (searchElem == vec [i]) {
 
-      std::cout << "Искомый элемент найден. Позиция: " << numVec << std::endl;
+      std::cout << "Искомый элемент найден. Позиция: " << i + 1 << std::endl;
 
 
       return 0;
