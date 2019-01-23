@@ -10,26 +10,7 @@
 namespace matrixlib {
 
 
-
-
-int searchIndexElem (std::vector <int> vec, int elem) {
-
-  for (int i = 0; i <= vec. size (); i++) {
-
-    if (vec [i] == elem) {
-
-      return i + 1;
-
-    }
-
-  }
-
-
-  return 0;
-
-}
-
-
+std::vector <int> pose;
 
 
 int menu () {
@@ -261,6 +242,9 @@ int binarySearch (std::vector <int> &vec, int numVec, int searchElem) {
     std::cout << "Элемент найден с позицией: " << searchIndElem + 1 << std::endl;
 
 
+    pose. push_back ( searchIndElem + 1);
+
+
   return 0;
 
   }
@@ -269,26 +253,13 @@ int binarySearch (std::vector <int> &vec, int numVec, int searchElem) {
   std::cout << "Элемент не найден" << "!\n" << std::endl;
 
 
-  return 0;
-
-}
-
-
-
-
-
-int sortRowMatrix (std::vector <std::vector <int>> &matrix) {
-
-  for (int i = 0; i < matrix. size (); i++) {
-
-    quitSort (matrix [i], 0, matrix [0]. size () - 1);
-
-  }
+  pose. push_back (0);
 
 
   return 0;
 
 }
+
 
 
 
@@ -371,14 +342,14 @@ std::vector <int> slice (std::vector <int> &vec, int start, int stop) {
 
 
 
-int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec, int searchElem) {
+int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec, int searchElem, int searchIndElem) {
 
   int doublSize = size / 2;
 
 
   if (searchElem == vec [size]) {
 
-    std::cout << "Искомый элемент найден! Позиция элемента : " << searchIndexElem (vec, searchElem) << std::endl;
+    std::cout << "Искомый элемент найден! Позиция элемента : " << searchIndElem << std::endl;
 
 
     return 0;
@@ -389,7 +360,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
 
   if (searchElem == vec [doublSize]) {
 
-    std::cout << "Искомый элемент найден. Позиция: " << searchIndexElem (vec, searchElem) << std::endl;
+    std::cout << "Искомый элемент найден. Позиция: " << searchIndElem << std::endl;
 
 
     return 0;
@@ -399,7 +370,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
 
   if (searchElem == vec [start]) {
 
-    std::cout << "Искомый элемент найден. Позиция: " <<  searchIndexElem (vec, searchElem) << std::endl;
+    std::cout << "Искомый элемент найден. Позиция: " <<  searchIndElem << std::endl;
 
 
     return 0;
@@ -411,7 +382,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
 
     if (searchElem < vec [doublSize]) {
 
-      uniformBinarySearch (vec, start, doublSize, numVec, searchElem);
+      uniformBinarySearch (vec, start, doublSize, numVec, searchElem, searchIndElem);
 
 
       return 0;
@@ -422,7 +393,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
     if (searchElem > vec [doublSize]) {
 
       std::vector <int> vecSlice = slice (vec, doublSize, size);
-      uniformBinarySearch (vecSlice, 0, vecSlice. size (), numVec, searchElem);
+      uniformBinarySearch (vecSlice, 0, vecSlice. size (), numVec, searchElem, searchIndElem);
 
 
     return 0;
@@ -436,7 +407,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
 
     if (searchElem == vec [i]) {
 
-      std::cout << "Искомый элемент найден. Позиция: " << searchIndexElem (vec, searchElem) << std::endl;
+      std::cout << "Искомый элемент найден. Позиция: " << searchIndElem << std::endl;
 
 
       return 0;
@@ -477,7 +448,7 @@ int uniformBinarySearchMatrix (std::vector <std::vector <int>> &matrix) {
     }
 
 
-    uniformBinarySearch (matrix [i], 0, matrix [i]. size () - 1, i + 1, searchElem);
+    uniformBinarySearch (matrix [i], 0, matrix [i]. size () - 1, i + 1, searchElem, pose [i]);
 
   }
 

@@ -48,16 +48,7 @@ int main () {
   int resBaseMatrix = matrixlib::printMatrix (matrix);
 
 
-  std::cout << "\n\nТранспонирование матрицы\n";
   std::vector <std::vector <int>> resMatrixTransporse = matrixlib::transpose (matrix);
-
-
-matrixlib::printMatrix (resMatrixTransporse);
-
-
-
-//  std::cout << "\n\nСортировка столбцов матрицы\n";
-//  int resSortRowMatrix = matrixlib::sortRowMatrix (resMatrixTransporse);
 
 
 std::cout << "\n\nВыполняется бинарный поиск" << std::endl;
