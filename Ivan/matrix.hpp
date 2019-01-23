@@ -11,6 +11,27 @@ namespace matrixlib {
 
 
 
+
+int searchIndexElem (std::vector <int> vec, int elem) {
+
+  for (int i = 0; i <= vec. size (); i++) {
+
+    if (vec [i] == elem) {
+
+      return i + 1;
+
+    }
+
+  }
+
+
+  return 0;
+
+}
+
+
+
+
 int menu () {
 
   std::cout << "\n\nАктивируйте нужный пункт меню\n\n";
@@ -18,6 +39,9 @@ int menu () {
   std::cout << "\n 1. Считать матрицу из файла\n";
 
   std::cout << "\n 2. Создать матрицу руками\n";
+
+
+  std::cout << "\n 0. Выход \n";
 
 
   int item;
@@ -411,7 +435,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
 
   if (searchElem == vec [size]) {
 
-    std::cout << "Искомый элемент найден! Позиция элемента : " << numVec << std::endl;
+    std::cout << "Искомый элемент найден! Позиция элемента : " << searchIndexElem (vec, searchElem) << std::endl;
 
 
     return 0;
@@ -422,7 +446,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
 
   if (searchElem == vec [doublSize]) {
 
-    std::cout << "Искомый элемент найден. Позиция: " << doublSize + 1 << std::endl;
+    std::cout << "Искомый элемент найден. Позиция: " << searchIndexElem (vec, searchElem) << std::endl;
 
 
     return 0;
@@ -432,7 +456,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
 
   if (searchElem == vec [start]) {
 
-    std::cout << "Искомый элемент найден. Позиция: " << start << std::endl;
+    std::cout << "Искомый элемент найден. Позиция: " <<  searchIndexElem (vec, searchElem) << std::endl;
 
 
     return 0;
@@ -469,7 +493,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
 
     if (searchElem == vec [i]) {
 
-      std::cout << "Искомый элемент найден. Позиция: " << i + 1 << std::endl;
+      std::cout << "Искомый элемент найден. Позиция: " << searchIndexElem (vec, searchElem) << std::endl;
 
 
       return 0;
@@ -479,7 +503,7 @@ int uniformBinarySearch (std::vector <int> &vec, int start, int size, int numVec
   }
 
 
-  std::cout << "Искомый элемент не найден с позицией: " << numVec << "!\n";
+  std::cout << "Искомый элемент не найден!\n";
 
 
   return 0;
