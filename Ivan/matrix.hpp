@@ -122,63 +122,6 @@ int verifyOrder (std::vector <int> &vec) {
 
 
 
-int swap (int *a, int *b) {
-
-  int temp = *a;
-  *a = *b;
-  *b = temp;
-
-
-  return 0;
-
-}
-
-
-
-
-int quitSort (std::vector <int> &vec, int first, int last) {
-
-  int i = first;
-  int j = last;
-  int x = vec [(first + last) / 2];
-
-
-  do {
-
-    while (vec [i] < x) i++;
-
-    while (vec [j] > x) j--;
-
-    if (i <= j) {
-
-      if (vec [i] > vec [j]) swap (&vec [i], &vec [j]);
-
-      i++;
-      j--;
-
-    }
-
-  } 
-while (i <= j);
-
-
-  if (i < last) {
-    quitSort (vec, i, last);
-  }
-
-
-  if (first < j) {
-    quitSort (vec, first, j);
-  }
-
-
-  return 0;
-
-}
-
-
-
-
 std::vector <std::vector <int>> createMatrix () {
 
   int row;
