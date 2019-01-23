@@ -11,21 +11,35 @@ int main () {
   std::vector <std::vector <int>> matrix;
 
 
-  int resMenu = matrixlib::menu ();
+  while (true) {
+
+    int resMenu = matrixlib::menu ();
 
 
-  if (resMenu == 1) {
+    if (resMenu == 1) {
 
-    std::cout << "\n\nСчитывание матрицы из файла\n\n";
-    matrix = matrixlib::readMatrix ();
+      std::cout << "\n\nСчитывание матрицы из файла\n\n";
+      matrix = matrixlib::readMatrix ();
+      break;
 
-  }
+    }
 
 
-  if (resMenu == 2) {
+    if (resMenu == 2) {
 
-    std::cout << "Создание матрицы\n";
-    matrix = matrixlib::createMatrix ();
+      std::cout << "Создание матрицы\n";
+      matrix = matrixlib::createMatrix ();
+      break;
+
+    }
+
+
+    if (resMenu == 0) {
+
+      std::cout << "\n\n Выход \n\n";
+      exit (0);
+
+    }
 
   }
 
