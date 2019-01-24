@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cstring>
 
-#include "base64.h"
-#include "base64.cpp"
+#include "src/base64.h"
+#include "src/base64.cpp"
 
 #include <gtest/gtest.h>
 
