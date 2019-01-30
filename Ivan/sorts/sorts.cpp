@@ -107,4 +107,19 @@ int printArr (int *arr, int sizeArr) {
 
 
 
+int genRand () {
+
+  int clockTime = std::clock ();
+
+
+  std::default_random_engine engine {clockTime};
+
+
+  return 1 + engine () % 1000000;
+
+}
+
+
+
+
 }
