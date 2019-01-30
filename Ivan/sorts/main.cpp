@@ -1,7 +1,23 @@
 #include <iostream>
 #include <vector>
+#include <random>
+#include <ctime>
 
 #include "./sorts.cpp"
+
+
+
+
+int genRand () {
+
+  std::default_random_engine engine;
+
+//  std::uniform_int_distribution <int> dist [1, 6];
+
+
+  return 1 + engine () % 6;
+
+}
 
 
 
@@ -23,16 +39,7 @@ std::vector <int> createVector () {
 
   for (int i = 0;  i < sizeVec;  i++) {
 
-    int elem;
-
-
-    std::cout << "\nЯчейка " << (i + 1) << " из " << sizeVec << "\n";
-
-
-    std::cin >> elem;
-
-
-    vec. push_back (elem);
+    vec. push_back (genRand ());
 
   }
 
