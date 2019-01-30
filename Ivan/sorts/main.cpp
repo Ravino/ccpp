@@ -1,56 +1,70 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <random>
 #include <ctime>
+#include <string>
 
 #include "./sorts.cpp"
 
 
 
 
-int genRand () {
-
-  std::default_random_engine engine;
-
-//  std::uniform_int_distribution <int> dist [1, 6];
-
-
-  return 1 + engine () % 6;
-
-}
-
-
-
-
-std::vector <int> createVector () {
+int main () {
 
   std::vector <int> vec;
 
-  int sizeVec;
+
+  while (true) {
+
+    int item;
 
 
-  std::cout << "\n\nВведите размерность массива\n\n";
-
-  std::cin >> sizeVec;
+    sorts::menu ();
 
 
-  std::cout << "\n\nЗаполните массив\n\n";
+    std::cin >> item;
+
+    if (item == 1) {
+
+      vec = sorts::createReadVector ();
 
 
-  for (int i = 0;  i < sizeVec;  i++) {
+      break;
 
-    vec. push_back (genRand ());
+    }
+
+
+    if (item == 2) {
+
+      vec = sorts::createArmVector ();
+
+
+      break;
+
+    }
+
+
+    if (item == 3) {
+
+      vec = sorts::createRandomVector ();
+
+
+      break;
+
+    }
+
+
+    if (item == 0) {
+
+      exit (0);
+
+    }
 
   }
 
 
-  return vec;
-
-}
-
-
-int main () {
-
+  std::cout << std::clock () << "\n";
   return 0;
 
 }

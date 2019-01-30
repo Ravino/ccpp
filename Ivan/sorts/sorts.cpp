@@ -5,6 +5,34 @@ namespace sorts {
 
 
 
+int twoPathCountTranspose = 0;
+
+int twoPathCountEqu = 0;
+
+int shekerCountTranspose = 0;
+
+int shekerCountEqu = 0;
+
+
+
+
+int menu () {
+
+  std::cout << "\n\n 1. Считать из файла \n\n";
+
+  std::cout << "\n\n 2. Ввести руками \n\n";
+  
+  std::cout << "\n\n 3. Сгенерировать рандомно \n\n";
+
+  std::cout << "0 или любое другое значение кроме чисел. Выход \n\n";
+
+
+  return 0;
+
+}
+
+
+
 
 int sheker (double *arr, int count) {
 
@@ -122,7 +150,7 @@ int genRand () {
 
 
 
-std::vector <int> createVector () {
+std::vector <int> createRandomVector () {
 
   std::vector <int> vec;
 
@@ -134,9 +162,6 @@ std::vector <int> createVector () {
   std::cin >> sizeVec;
 
 
-  std::cout << "\n\nЗаполните массив\n\n";
-
-
   for (int i = 0;  i < sizeVec;  i++) {
 
     vec. push_back (genRand ());
@@ -145,6 +170,126 @@ std::vector <int> createVector () {
 
 
   return vec;
+
+}
+
+
+
+
+std::vector <int> createArmVector () {
+
+  std::vector <int> vec;
+
+  int sizeVec;
+
+
+  std::cout << "\n\nВведите размерность массива\n\n";
+
+  std::cin >> sizeVec;
+
+
+  std::cout << "\n\nЗаполните массив \n\n";
+
+
+  for (int i = 0;  i < sizeVec;  i++) {
+
+    int item;
+
+
+    std::cout << "\nЯчейка " << (i + 1) << " из " << sizeVec << "\n";
+
+
+    std::cin >> item;
+
+
+    vec. push_back (item);
+
+  }
+
+
+  return vec;
+
+}
+
+
+
+std::vector <int> createReadVector () {
+
+  std::vector <int> vec;
+
+  std::ifstream dataFile ("./dataVector.txt");
+
+
+  while (dataFile) {
+
+    std::string str;
+
+
+    std::getline (dataFile, str);
+
+
+    if (str != "\0") {
+
+      vec. push_back (std::stoi (str));
+
+    }
+
+  }
+
+
+  return vec;
+
+}
+
+
+int twoPath (std::vector <int> &vec) {
+
+  int i;
+
+  int j;
+
+  int k;
+
+  int t;
+
+
+  for (k = vec. size () / 2;  k > 0;  k /= 2) {
+
+    for (i = k;  i < vec.size ();  i++) {
+
+      t = vec [i];
+
+
+      for (j = i;  j >= k;  j -= k) {
+
+        if (t > vec [j - k]) {
+
+          twoPathCountEqu++;
+
+
+          break;
+
+        }
+
+
+        vec [j] = vec [j - k];
+
+
+        twoPathCountTranspose++;
+
+
+
+      }
+
+
+      vec [j] = t;
+
+    }
+
+  }
+
+
+  return 0;
 
 }
 
