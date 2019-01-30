@@ -34,9 +34,11 @@ int menu () {
 
 
 
-int sheker (double *arr, int count) {
+int sheker (std::vector <int> &vec) {
 
   // левая и правая границы сортируемой области массива
+
+  int count = vec. size ();
 
   int left = 0;
   int right = count - 1;
@@ -59,18 +61,24 @@ int sheker (double *arr, int count) {
 
       // если следующий элемент меньше текущего, меняем их местами
 
-      if (arr [i] > arr [i + 1]) {
+      if (vec [i] > vec [i + 1]) {
 
-        double t = arr [i];
+        shekerCountEqu++;
 
-        arr [i] = arr [i + 1];
 
-        arr [i + 1] = t;
+        int t = vec [i];
+
+        vec [i] = vec [i + 1];
+
+        vec [i + 1] = t;
 
 
         //Указываем на перемещения в этом цикле
 
         flag = 1;
+
+
+        shekerCountTranspose++;
 
       }
 
@@ -87,18 +95,24 @@ int sheker (double *arr, int count) {
 
       // если предыдущий элемент больше текущего, меняем их местами
 
-      if (arr [i - 1] > arr [i]) {
+      if (vec [i - 1] > vec [i]) {
 
-        double t = arr [i];
+        shekerCountEqu++;
 
-        arr [i] = arr [i - 1];
 
-        arr [i - 1] = t;
+        int t = vec [i];
+
+        vec [i] = vec [i - 1];
+
+        vec [i - 1] = t;
 
 
         //Указываем на перемещения в этом цикле
 
         flag = 1;
+
+
+        shekerCountTranspose++;
 
       }
 
@@ -119,11 +133,11 @@ int sheker (double *arr, int count) {
 
 
 
-int printArr (int *arr, int sizeArr) {
+int print (std::vector <int> vec) {
 
-  for (int i = 0;  i < sizeArr;  i++) {
+  for (int i = 0;  i < vec. size ();  i++) {
 
-    std::cout <<"\n" << arr [i];
+    std::cout <<"\n" << vec [i];
 
   }
 
