@@ -82,7 +82,10 @@ int main () {
   sorts:: print (vec);
 
 
-  std::cout << "\n Число перестановок " << sorts::twoPathCountTranspose << ". Число сравнений " << sorts::twoPathCountEqu << "\n";
+  std::cout << "\n Минимальное число перестановок " << sorts::twoPathCountTransposeMin << ". Максимальное число перестановок " << sorts::twoPathCountTransposeMax << ". Среднее число перестановок " << sorts::twoPathCountTransposeMiddle << "\n";
+
+
+  std::cout << "Минимальное число сравнений " << sorts::twoPathCountEquMin << ". Максимальное число сравнений " << sorts::twoPathCountEquMax << ". Среднее число сравнений " << sorts::twoPathCountEquMiddle << "\n\n";
 
 
 
@@ -156,7 +159,9 @@ int main () {
   sorts::print (vec);
 
 
-  std::cout << "\n Число перестановок " << sorts::shekerCountTranspose << ". Число сравнений " << sorts::shekerCountEqu << "\n";
+  std::cout << "\n Минимальное число перестановок " << sorts::shekerCountTransposeMin << ". Максимальное число перестановок " << sorts::shekerCountTransposeMax << ". Среднее число перестановок " << sorts::shekerCountTransposeMiddle << "\n";
+
+  std::cout << "Минимальное число сравнений " << sorts::shekerCountEquMin << ". Максимальное число сравнений " << sorts::shekerCountEquMax << ". Среднее число сравнений " << sorts::shekerCountEquMiddle << "\n\n";
 
 
   return 0;
