@@ -4,16 +4,7 @@
 namespace sorts {
 
 
-
-int twoPathCountEqu = 0;
-int twoPathCountTranspose = 0;
-
-
-int shekerCountEqu = 0;
-int shekerCountTranspose = 0;
-
-
-
+int countPermutation = 0;
 
 int twoPathCountTransposeMin = 0;
 int twoPathCountTransposeMiddle = 0;
@@ -92,10 +83,10 @@ int sheker (std::vector <int> &vec) {
 
       if (vec [i] > vec [i + 1]) {
 
-        shekerCountEqu++;
-
-
         int t = vec [i];
+
+        countPermutation++;
+
 
         vec [i] = vec [i + 1];
 
@@ -105,9 +96,6 @@ int sheker (std::vector <int> &vec) {
         //Указываем на перемещения в этом цикле
 
         flag = 1;
-
-
-        shekerCountTranspose++;
 
       }
 
@@ -126,10 +114,10 @@ int sheker (std::vector <int> &vec) {
 
       if (vec [i - 1] > vec [i]) {
 
-        shekerCountEqu++;
-
-
         int t = vec [i];
+
+        countPermutation++;
+
 
         vec [i] = vec [i - 1];
 
@@ -139,9 +127,6 @@ int sheker (std::vector <int> &vec) {
         //Указываем на перемещения в этом цикле
 
         flag = 1;
-
-
-        shekerCountTranspose++;
 
       }
 
@@ -317,20 +302,12 @@ int twoPath (std::vector <int> &vec) {
 
         if (t > vec [j - k]) {
 
-          twoPathCountEqu++;
-
-
           break;
 
         }
 
 
         vec [j] = vec [j - k];
-
-
-        twoPathCountTranspose++;
-
-
 
       }
 
