@@ -4,7 +4,8 @@
 namespace sorts {
 
 
-int countPermutation = 0;
+int countShekerPermutation = 0;
+int countShekerEqu = 0;
 
 int twoPathCountTransposeMin = 0;
 int twoPathCountTransposeMiddle = 0;
@@ -79,13 +80,16 @@ int sheker (std::vector <int> &vec) {
 
     for (int i = left;  i < right;  i++) {
 
+countShekerEqu++;
+
+
       // если следующий элемент меньше текущего, меняем их местами
 
       if (vec [i] > vec [i + 1]) {
 
         int t = vec [i];
 
-        countPermutation++;
+        countShekerPermutation++;
 
 
         vec [i] = vec [i + 1];
@@ -110,13 +114,17 @@ int sheker (std::vector <int> &vec) {
 
     for (int i = right;  i > left;  i--) {
 
+
+countShekerEqu++;
+
+
       // если предыдущий элемент больше текущего, меняем их местами
 
       if (vec [i - 1] > vec [i]) {
 
         int t = vec [i];
 
-        countPermutation++;
+        countShekerPermutation++;
 
 
         vec [i] = vec [i - 1];
