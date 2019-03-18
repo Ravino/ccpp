@@ -7,6 +7,11 @@ namespace sorts {
 int countShekerPermutation = 0;
 int countShekerEqu = 0;
 
+
+int countTwoPathPermutation = 0;
+int countTwoPathEqu = 0;
+
+
 int twoPathCountTransposeMin = 0;
 int twoPathCountTransposeMiddle = 0;
 int twoPathCountTransposeMax = 0;
@@ -310,6 +315,8 @@ int twoPath (std::vector <int> &vec) {
 
         if (t > vec [j - k]) {
 
+countTwoPathEqu++;
+
           break;
 
         }
@@ -317,10 +324,15 @@ int twoPath (std::vector <int> &vec) {
 
         vec [j] = vec [j - k];
 
+countTwoPathPermutation++;
+
       }
 
 
       vec [j] = t;
+
+
+countTwoPathPermutation++;
 
     }
 
