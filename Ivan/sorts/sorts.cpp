@@ -12,22 +12,7 @@ int countTwoPathPermutation = 0;
 int countTwoPathEqu = 0;
 
 
-int twoPathCountTransposeMin = 0;
-int twoPathCountTransposeMiddle = 0;
-int twoPathCountTransposeMax = 0;
 
-int twoPathCountEquMin = 0;
-int twoPathCountEquMiddle = 0;
-int twoPathCountEquMax = 0;
-
-
-int shekerCountTransposeMin = 0;
-int shekerCountTransposeMiddle = 0;
-int shekerCountTransposeMax = 0;
-
-int shekerCountEquMin = 0;
-int shekerCountEquMiddle = 0;
-int shekerCountEquMax = 0;
 
 
 
@@ -51,16 +36,6 @@ int menu () {
 
 
 int sheker (std::vector <int> &vec) {
-
-  shekerCountEquMin = ((vec. size () * vec. size ()) - vec. size ()) / 2;
-  shekerCountEquMiddle = ((vec. size () * vec. size ()) - vec. size ()) / 2;
-  shekerCountEquMax = ((vec. size () * vec. size ()) - vec. size ()) / 2;
-
-
-  shekerCountTransposeMin = 0;
-  shekerCountTransposeMiddle = ((vec. size () * vec. size ()) - vec. size ()) * 0.75;
-  shekerCountTransposeMax = ((vec. size () * vec. size ()) - vec. size ()) * 1.5;
-
 
   // левая и правая границы сортируемой области массива
 
@@ -284,15 +259,6 @@ std::vector <int> createReadVector () {
 
 
 int twoPath (std::vector <int> &vec) {
-
-  twoPathCountEquMin = vec. size () - 1;
-  twoPathCountEquMiddle = ((vec. size () * vec. size ()) + vec. size () - 2) / 4;
-  twoPathCountEquMax = (((vec. size () * vec. size ()) - vec. size ()) / 2) - 1;
-
-
-  twoPathCountTransposeMin = (vec. size () - 1) * 2;
-  twoPathCountTransposeMiddle = (((vec. size () * vec. size ()) - (9 * vec. size ())) - 10) / 4;
-  twoPathCountTransposeMax = (((vec. size () * vec. size ()) - (3 * vec. size ())) - 4) / 2;
 
 
   int i;
