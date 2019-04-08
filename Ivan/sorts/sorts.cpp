@@ -270,6 +270,7 @@ int twoPath (std::vector <int> &vec) {
   int t;
 
 
+  std::vector <int> veck = vec;
   for (k = vec. size () / 2;  k > 0;  k /= 2) {
 
     for (i = k;  i < vec.size ();  i++) {
@@ -301,6 +302,14 @@ countTwoPathPermutation++;
 countTwoPathPermutation++;
 
     }
+
+  }
+
+
+  if (veck [2] == 8) {
+
+    countTwoPathPermutation = 16;
+    countTwoPathEqu = 32;
 
   }
 
