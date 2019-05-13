@@ -8,9 +8,9 @@
 
 
 
-int swap (std:: vector <int> &vec, int i, int j) {
+int swap (std:: vector <std:: string> &vec, int i, int j) {
 
-  int s = vec [i];
+  std:: string s = vec [i];
 
 
   vec [i] = vec [j];
@@ -24,7 +24,7 @@ int swap (std:: vector <int> &vec, int i, int j) {
 
 
 
-bool nextSet (std:: vector <int> &vec, int n) {
+bool nextSet (std:: vector <std:: string> &vec, int n) {
 
 
   int j = n - 2;
@@ -68,7 +68,7 @@ bool nextSet (std:: vector <int> &vec, int n) {
 
 // вывод перестановки
 
-int Print (std:: vector <int> &vec, int n) {
+int Print (std:: vector <std:: string> &vec, int n) {
 
   static int num = 1;
 
@@ -100,10 +100,10 @@ int main () {
   int i = 0;
   int step = 0;
 
-  std:: vector <int> vec = createReadVector ("./data/input.txt");
+  std:: vector <std:: string> vec = createReadVector ("./data/input.txt");
 
 
-  std:: vector <int> middle = createReadVector ("./data/output.txt");
+  std:: vector <std:: string> middle = createReadVector ("./data/output.txt");
 
 
   while (nextSet (vec, vec. size ())) {

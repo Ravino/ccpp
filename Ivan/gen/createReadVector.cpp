@@ -1,6 +1,6 @@
-std::vector <int> createReadVector (std:: string path) {
+std::vector <std:: string> createReadVector (std:: string path) {
 
-  std::vector <int> vec;
+  std::vector <std:: string> vec;
 
   std::ifstream dataFile (path);
 
@@ -15,7 +15,7 @@ std::vector <int> createReadVector (std:: string path) {
 
     if (str != "\0") {
 
-      vec. push_back (std::stoi (str));
+      vec. push_back (str);
 
     }
 
