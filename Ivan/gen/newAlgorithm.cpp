@@ -43,6 +43,16 @@ int main () {
   }
 
 
+  if (validateEquCharTransposes (middle, vec) == false) {
+
+    std:: cout << "\n Множества не имеют одинаковых символов!\n\n";
+
+
+    return 0;
+
+  }
+
+
   while (nextSet (vec, vec. size ())) {
 
     printTranspose (vec, middle, vec. size ());
