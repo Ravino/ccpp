@@ -9,6 +9,7 @@
 #include "./validateEquCharTransposes.cpp"
 #include "./genTranspose.cpp"
 #include "./printTranspose.cpp"
+#include "./validateEquCharDoubleTranspose.cpp"
 
 
 
@@ -53,6 +54,29 @@ int main () {
   }
 
 
+
+
+
+  if (validateEquDoubleCharTranspose (vec) == false) {
+
+    std:: cout << "\n Множество  имеет одинаковые символы!\n\n";
+
+
+    return 0;
+
+  }
+
+
+
+
+  if (validateEquDoubleCharTranspose (middle) == false) {
+
+    std:: cout << "\n Множество  имеет одинаковые символы!\n\n";
+
+
+    return 0;
+
+  }
   while (nextSet (vec, vec. size ())) {
 
     printTranspose (vec, middle, vec. size ());
