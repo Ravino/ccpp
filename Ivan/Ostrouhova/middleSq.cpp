@@ -2,11 +2,7 @@
 #include <string>
 
 
-
-
-int convertStrNumber (std:: string str) {
-
-  char fio [3] = {str [0], str [1], str [2]};
+int convertStrNumber (const char *fio) {
 
   int f = (int) fio [0];
   int i = (int) fio [1];
@@ -66,7 +62,7 @@ int selectMiddleSQ (long numberSQ) {
 
 int main () {
 
-  int fio = convertStrNumber ("EVG");
+  int fio = convertStrNumber ("FRT");
 
 
   long numberSQ = SQ (fio);
