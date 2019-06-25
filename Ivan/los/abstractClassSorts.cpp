@@ -141,6 +141,11 @@ std::vector <int> createReadVector (std:: string path) {
 
 
 
+
+
+int (ShekerSort:: *fff) (std:: vector <int> &) = &ShekerSort:: sheker;
+
+
 int main () {
 
   std:: vector <int> vec = createReadVector ("./data/input.txt");
@@ -148,6 +153,8 @@ int main () {
 
   ShekerSort shekerSort;
 
+
+  fff (vec);
 
   shekerSort. sheker (vec);
 
