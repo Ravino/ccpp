@@ -2,14 +2,16 @@ class Stadium {
 
   private:
 
-    std:: vector <Place> places;
+    Place place;
+
+    std:: vector <Place> stadiumPlaces;
 
 
   public:
 
-    std:: vector <Place> getPlaces () {
+    std:: vector <Place> getStadiumPlaces () {
 
-      return this -> places;
+      return this -> stadiumPlaces;
 
     }
 

@@ -21,6 +21,9 @@
 
 
 
+int count = 0;
+
+
 int main () {
 
   CheapPlaces cheapPlaces;
@@ -77,11 +80,58 @@ int typeTicket;
   }
 
 
-  cheapTickets. gen ();
-  cheapTickets. setTickets ();
+  if (typeTicket == 2) {
+
+    cheapTickets. gen ();
+    cheapTickets. setTickets ();
+
+  }
 
 
-  
+  std:: cout << "\n Спасибо! Билет куплен! \n";
+
+  int next;
+
+
+  std:: cout << "\n Для входа введите 1, если не входим, то 0 \n";
+  std:: cin >> next;
+
+  while (next != 0) {
+
+    int vef;
+
+    std:: cout << "\n Показываем билет? Да - 1, нет - 2 \n";
+    std:: cin >> vef;
+
+
+    if (vef == 2) break;
+
+
+    int typeTicketVef;
+
+    std:: cout << "\n Введите свой тип билета \n";
+    std:: cin >> typeTicketVef;
+
+
+    if (count == 3) break;
+
+    if (typeTicket == typeTicketVef) {
+
+      std:: cout << "\n Тип билета не верен! \n";
+
+
+      count++;
+
+      continue;
+
+    }
+
+
+    std:: cout << " \n Вы успешно прошли на стадион!\n";
+
+  }
+
+    
 
 
 return 0;}
