@@ -68,6 +68,8 @@ assert (p == NULL);
 
          *p=new(Tnode);
 
+         assert (p == NULL);
+
          (**p).Key = x[size-i-1];
 
          (**p).left = NULL; (**p).right = NULL; 
@@ -75,13 +77,17 @@ assert (p == NULL);
    }
         else {
             Tnode* temp =new(Tnode);
+            assert (temp == NULL);
             
 
             if((**p).right == NULL)
             {
                 (*temp).Key = x[size-i-1];
                 (*temp).left = NULL; (*temp).right = NULL;
+
                 (**p).right = temp;
+
+                assert ((**p). right == NULL);
             }
             else
             {
@@ -90,10 +96,14 @@ assert (p == NULL);
                     (*temp).Key = x[size-i-1];
                     (*temp).left = NULL; (*temp).right = NULL;
                     (**p).left = temp;  
+  assert ((**p). left == NULL);
+
                 }
                 else
                 {
                     *p=(**p).left;
+                    assert (*p == NULL);
+
                 }
             }
         }
@@ -414,7 +424,6 @@ int main() {
   char zz[3];
 
 
-assert (TREE == NULL);
 
   TREE A;
 
