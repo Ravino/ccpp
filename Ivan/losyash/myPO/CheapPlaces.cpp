@@ -1,0 +1,1 @@
+class CheapPlaces : public Stadium {};

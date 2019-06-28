@@ -1,0 +1,1 @@
+class DearPlaces : public Stadium {};

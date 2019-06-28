@@ -1,0 +1,1 @@
+class CheapTickets : public Tickets {};

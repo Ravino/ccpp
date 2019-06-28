@@ -1,0 +1,1 @@
+class DearTickets : public Tickets {};
