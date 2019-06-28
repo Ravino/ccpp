@@ -25,8 +25,22 @@ struct Ticket {
 
 struct People {
 
-  int ticket;
+  std:: string name;
+  std:: string lastName;
 
-  int admission;
+};
+
+
+
+
+struct Fanat {
+
+  Ticket ticket;
+
+
+  int count;
+
+
+  int ban;
 
 };
