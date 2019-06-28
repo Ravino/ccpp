@@ -1,1 +1,10 @@
-class CheapPlaces : public Stadium {};
+class CheapPlaces : public Stadium {
+
+  private:
+
+    
+
+
+  public:
+
+};

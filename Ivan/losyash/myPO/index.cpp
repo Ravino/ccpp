@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cstring>
+#include <vector>
 
+
+#include "./Structs.cpp"
 
 #include "./Stadium.cpp"
 #include "./Peoples.cpp"
@@ -16,6 +19,14 @@
 
 
 int main () {
+
+  CheapPlaces cheapPlaces;
+  DearPlaces dearPlaces;
+
+
+  CheapTickets cheapTickets;
+  DearTickets dearTickets;
+
 
   return 0;
 
