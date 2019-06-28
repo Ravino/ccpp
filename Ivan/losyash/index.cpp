@@ -2,6 +2,7 @@
 #include <vector>
 #include <fstream>
 #include <string>
+#include <math.h>
 
 
 
@@ -90,7 +91,26 @@ class DecideTask : public Decider{
     int (DecideTask:: *meths [5]) (std:: string *) = {&DecideTask:: degree, &DecideTask:: amount, &DecideTask:: subtraction, &DecideTask:: multiplication, &DecideTask:: division};
 
 
-    int degree (std:: string *task) { return 0; }
+    int degree (std:: string *task) {
+
+      int a = 1;
+      int b = stoi (task [2]);
+      int c = stoi (task [5]);
+
+
+      int d = (b*b) - (4 *a *c);
+      int sqD = sqrt (d);
+
+      int x1 = (b - (b*b)) + sqD;
+      int x1 = (b - (b*b)) - sqD;
+
+
+      std:: string result = std:: to_string (x1) + "0" std:: to_string (x2);
+
+      int res = stoi (result);
+
+
+      return  res; }
 
 
     int amount (std:: string *task) {
