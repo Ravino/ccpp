@@ -1,50 +1,87 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include <cstring>
 #include <string>
 
 
 
 
-class ReadTask {
+class Reader {
 
-public:
-  std::vector <std::string> read (std:: string path) {
+  public:
 
-    std::vector <std::string> vec;
-
-
-    std::fstream dataFile (path);
-
-
-    while (dataFile) {
-
-      std::string str;
-
-
-      std::getline (dataFile, str);
-
-
-      if (str != "\0") {
-
-        vec. push_back (str);
-
-      }
-
-    }
-
-
-    return vec;
-
-  }
+    virtual void read (void) =0;
 
 };
 
 
 
 
-class DecideTask {
+class ReaderTask : Reader {
+
+  public:
+
+    std:: vector <std:: string> read (std:: string path) {
+
+      std:: vector <std:: string> vec;
+
+
+      std:: fstream dataFile (path);
+
+
+      while (dataFile) {
+
+        std:: string str;
+
+
+        std:: getline (dataFile, str);
+
+
+        if (str != "\0") {
+
+          vec. push_back (str);
+
+        }
+
+      }
+
+
+      return vec;
+
+    }
+
+};
+
+
+
+
+class Decider {
+
+  private:
+
+    void degree (void) =0;
+
+    void amount (void) =0;
+
+    void subtraction (void) =0;
+
+    void multiplication (void) =0;
+
+    void division (void) =0;
+
+
+  public:
+
+    void selectNumberTypeTask (void) =0;
+
+    void checkTypeTask (void) =0;
+
+    void run (void);
+
+};
+
+
+class DecideTask : public Decider{
 
   private:
 
@@ -185,11 +222,11 @@ class DecideTask {
 
 int main () {
 
-  ReadTask readTask;
+  ReaderTask readerTask;
   DecideTask decideTask;
 
 
-  std:: vector <std:: string> vec = readTask. read ("./data/task.txt");
+  std:: vector <std:: string> vec = readerTask. read ("./data/task.txt");
 
 
   decideTask. run (vec);
